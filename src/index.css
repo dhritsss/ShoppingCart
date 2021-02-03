@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-c.cart-item {
+.cart-item {
   display: inline-flex;
   margin: 20px 10px;
 }
@@ -27,3 +27,7 @@ c.cart-item {
   width: 25px;
   margin-right: 10px;
 } 
+
+.action-icons:hover {
+  cursor: pointer;
+}
