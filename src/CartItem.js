@@ -11,6 +11,14 @@ class CartItem extends React.Component{
         }
     }
 
+    //yaha arrow function kyu tuje pata h
+    //>>this is very crucial
+
+    increaseQuantity=()=>{
+        console.log(this,this.state);
+    }
+
+
     render(){
         const {title,price,qty}=this.state;
         return(
@@ -25,7 +33,7 @@ class CartItem extends React.Component{
                     <div style={{color:'#777'}}> Rs {price}</div>
                     <div className="cart-item-actions">
                         {/* Buttons*/}
-                        <img className="action-icons" alt="increase" src="https://www.flaticon.com/premium-icon/icons/svg/3114/3114793.svg"/>
+                        <img  onClick={this.increaseQuantity}   className="action-icons" alt="increase" src="https://www.flaticon.com/premium-icon/icons/svg/3114/3114793.svg"/>
                         <img className="action-icons" alt="decrease" src="https://as1.ftcdn.net/jpg/03/73/49/86/500_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg"/>
                         <img className="action-icons" alt="delete" src="https://www.flaticon.com/premium-icon/icons/svg/2907/2907762.svg"/>
                     </div>
