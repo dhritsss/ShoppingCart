@@ -34,13 +34,86 @@ class Cart extends React.Component{
         }
     }
 
+    
+    //yaha arrow function kyu tuje pata h
+    //>>this is very crucial
+
+    increaseQuantity=(product)=>{
+        //Conept of batching is imp here and also note that setSate work both async and sync(in promises)
+        //they can be handled or called in 2 ways (callback and the 1st one)
+        //this.state.prop="xyz"  --> will not cause rendering
+
+        // this.state.qty+=1;    //this wont change the display stuff
+        // console.log('this',this.state);
+
+        // *************setState form 1 *************
+
+        // this.setState({   //this work
+        //     qty:this.state.qty+1
+        // });
+        // *************setState form 2 *************
+        //note it act async here
+        //learn about batching once 
+        const {products}=this.state;
+        const index=products.indexOf(product);
+        products[index].qty+=1;
+
+
+        this.setState((prevState)=>{
+            return {
+                products
+            }
+        })
+
+
+
+
+    }
+
+    decreaseQuantity=(product)=>{
+        const {products}=this.state;
+        const index=products.indexOf(product);
+
+        if(products[index].qty==0){
+            return;
+        }
+        products[index].qty-=1;
+
+        
+        this.setState((prevState)=>{
+           return {products};
+        })
+
+
+
+
+    }
+
+    deleteProduct=(id)=>{
+        const {products}=this.state;
+        const items=products.filter((item)=>item.id!=id);
+
+        this.setState({
+            products:items
+        })
+
+    }
+
     render(){
         const {products}=this.state;
         return(
             <div className="cart">
             {
             products.map((product)=>{
-            return <CartItem product={product} key={product.id}/>
+                // we can pretty much send everything as a prop
+            return <CartItem 
+                product={product} 
+                key={product.id}
+                increaseQuantity={this.increaseQuantity}
+                decreaseQuantity={this.decreaseQuantity}
+                deleteProduct={this.deleteProduct}
+
+                />
 
             })
         
