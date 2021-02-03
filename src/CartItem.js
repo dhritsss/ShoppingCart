@@ -1,15 +1,7 @@
 import React from 'react';
 
 class CartItem extends React.Component{
-    constructor(){
-        super();
-        this.state={
-            price:999,
-            title:'Mobile Phone',
-            qty:1,
-            img:''
-        }
-    }
+    
 
     //yaha arrow function kyu tuje pata h
     //>>this is very crucial
@@ -42,9 +34,28 @@ class CartItem extends React.Component{
 
     }
 
+    decreaseQuantity=()=>{
+        
+        
+        this.setState((prevState)=>{
+            const {qty}=this.state;
+            if(qty==0){
+                return;
+            }
+
+            return {
+                qty:prevState.qty-1
+            }
+        })
+
+
+
+
+    }
+
 
     render(){
-        const {title,price,qty}=this.state;
+        const {title,price,qty}=this.props.product;
         return(
             <div className="cart-item">
                 <div className="left-block">
@@ -59,7 +70,7 @@ class CartItem extends React.Component{
                     <div className="cart-item-actions">
                         {/* Buttons*/}
                         <img  onClick={this.increaseQuantity}   className="action-icons" alt="increase" src="https://www.flaticon.com/premium-icon/icons/svg/3114/3114793.svg"/>
-                        <img className="action-icons" alt="decrease" src="https://as1.ftcdn.net/jpg/03/73/49/86/500_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg"/>
+                        <img onClick={this.decreaseQuantity}  className="action-icons" alt="decrease" src="https://as1.ftcdn.net/jpg/03/73/49/86/500_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg"/>
                         <img className="action-icons" alt="delete" src="https://www.flaticon.com/premium-icon/icons/svg/2907/2907762.svg"/>
                     </div>
 
