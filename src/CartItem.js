@@ -27,13 +27,16 @@ class CartItem extends React.Component{
         // this.setState({   //this work
         //     qty:this.state.qty+1
         // });
-
+        // *************setState form 2 *************
+        //note it act async here
+        //learn about batching once 
+        
         this.setState((prevState)=>{
             return {
                 qty:prevState.qty+1
             }
         })
-        
+
 
 
 
