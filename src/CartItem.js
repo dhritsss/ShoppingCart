@@ -15,7 +15,28 @@ class CartItem extends React.Component{
     //>>this is very crucial
 
     increaseQuantity=()=>{
-        console.log(this,this.state);
+        //Conept of batching is imp here and also note that setSate work both async and sync(in promises)
+        //they can be handled or called in 2 ways (callback and the 1st one)
+        //this.state.prop="xyz"  --> will not cause rendering
+
+        // this.state.qty+=1;    //this wont change the display stuff
+        // console.log('this',this.state);
+
+        // *************setState form 1 *************
+
+        // this.setState({   //this work
+        //     qty:this.state.qty+1
+        // });
+
+        this.setState((prevState)=>{
+            return {
+                qty:prevState.qty+1
+            }
+        })
+        
+
+
+
     }
 
 
@@ -31,6 +52,7 @@ class CartItem extends React.Component{
                 <div className="right-block">
                     <div style={{fontSize:25}}>{title}</div>
                     <div style={{color:'#777'}}> Rs {price}</div>
+                    <div style={ { color: '#777' } }>Qty : {qty}</div>
                     <div className="cart-item-actions">
                         {/* Buttons*/}
                         <img  onClick={this.increaseQuantity}   className="action-icons" alt="increase" src="https://www.flaticon.com/premium-icon/icons/svg/3114/3114793.svg"/>
