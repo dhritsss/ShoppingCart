@@ -1,0 +1,19 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD2ytpjxNT6V5ZnC51L29kOvVXe7vaP3tQ",
+    authDomain: "shop-cart-73342.firebaseapp.com",
+    projectId: "shop-cart-73342",
+    storageBucket: "shop-cart-73342.appspot.com",
+    messagingSenderId: "564643325673",
+    appId: "1:564643325673:web:0522cfccd37ee8f25b3278"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
