@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Hospital Patient Registration Form
+	</title>
+</head>
+<body>
+<form action="/" method="POST">
+
+<h1 style = "background-color:rgb(255,99,71); text-align: center; color: black;">Welcome to DB's Hospital</h1>	
+<h2 style = "background-color:rgb(255,99,71); text-align: center; color: black;">Please Register</h2>	
+
+<label>Title:</label>
+	<select name="Title">
+	<option value="Mr">Mr</option>
+	<option value="Mrs">Mrs</option>
+	<option value="Miss">Miss</option>
+	<option value="Ms">Ms</option>
+	</select>
+<br>
+<br>
+<label>First name:</label><br>
+	<input type="text" name="fname" value="" required>
+<br>
+<br>
+<label>Last name:</label><br>
+	<input type="text" name="lname" value="" required>
+<br>
+<br>
+<img src="unnamed.jpg" height="500" width="500" align="right">
+<label>SSN:</label><br>
+	<input type="number" name="SSN" value="" >
+<br>
+<br>
+
+<label>Gender:</label>
+	<select name="Gender">
+	<option value="Male">Male</option>
+	<option value="Female">Female</option>
+	<option value="Other">Other</option>
+	</select>
+<br>
+<br>
+<label>Birthday:</label>
+	<input type="date" name="birthday" >
+<br>
+<br>
+<label>Height (cm):</label><br>
+	<input type="number" name="Height" value="" >
+<br>
+<br>
+<label>Weight (kg):</label><br>
+	<input type="number" name="Weight" value="" >
+<br>
+<br>
+<label>Marital Status:</label>
+	<select name="Marital">
+	<option value="Married">Married</option>
+	<option value="Single">Single</option>
+	<option value="Engaged">Engaged</option>
+	<option value="Widowed">Widowed</option>
+	<option value="Divorced">Divorced</option>
+	</select>
+<br>
+<br>
+<label>Email:</label>
+	<input type="email" name="email" value="" >
+<br>
+<br>
+<label>Address:</label>
+	<textarea name="Message" rows="5" cols="30"></textarea>
+<br>
+<br>
+<label>Phone number (mobile):</label><br>
+	<input type="number" name="Mobile" value="" >
+<br>
+<br>
+<label>Phone number (home):</label><br>
+	<input type="number" name="Home" value="" >
+<br>
+<br>
+<label>Emergency contact (mobile):</label><br>
+	<input type="number" name="Emergency" value="" >
+<br>
+<br>
+<input type="submit" value = 'Submit'>
+<br>
+<br>
+<input type="reset" value = 'Reset'>
+
+<br>
+<br>
+
+<h2 style = "background-color:rgb(255,99,71); text-align: center; color: black;">Make an appointment:</h2>
+
+<br>
+
+<img src="SAN_Healthcare_HospitalBed.jpg" height="300" width="700" align="right">
+
+<label>SSN:</label><br>
+	<input type="number" name="SSN" value="" >
+
+<br>
+<br>
+
+	
+
+<label>Choose a doctor:</label>
+	<select name="Doctor">
+	<option value="Doc1">Dr. Laurel Esparza</option>
+	<option value="Doc2">Dr. Cavan Ibarra</option>
+	<option value="Doc3">Dr. Marcus Mcleod</option>
+	<option value="Doc4">Dr. Leroy Sharma</option>
+	<option value="Doc5">Dr. Angelina Flynn</option>
+	<option value="Doc6">Dr. Donell Dickens</option>
+	<option value="Doc7">Dr. Yasin Rangel</option>
+	<option value="Doc8">Dr. Nial Murphy</option>
+	<option value="Doc9">Dr. Victoria Houghton</option>
+	<option value="Doc10">Dr. Kalem Cordova</option>
+	<option value="Any">Any doctor</option>
+	</select>
+	
+<br>
+<br>
+<label>Reason for visiting:</label>
+	<textarea name="Reason" rows="5" cols="30"></textarea>
+<br>
+<br>
+<label>Date for appointment:</label>
+	<input type="date"  min="2020-07-24" max="2020-12-31" name="appointment date" >
+<br>
+<br>
+<label>Time for appointment:</label>
+	<input type="time" min="09:00" max="18:00" name="appointment time" >
+<br>
+<br>
+<input type="submit" value = 'Submit'>
+<br>
+<br>
+<input type="reset" value = 'Reset'>
+
+</form>
+</body>
+</html>
